@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <link rel="icon" type="image/png" href="./icons8-register-96.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!--Это кнопка-->
+    <div class="lang_settings">
+      <label for="lang_select" id="sel_label">Choose language</label>
+      <select name="lang_select" id="lang_select">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+      </select>
+      <button id="continue_btn">Continue</button>
+    </div>
+
+    <!--Это сама форма-->
+    <div class="container">
+      <p class="topping" id="formTopping">User register form</p>
+      <hr />
+      <form id="myForm" novalidate>
+        <label id="labelForName" for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          minlength="2"
+          required
+          autocomplete="off"
+          pattern="[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё\- ]*"
+        />
+        <p id="invalidName"></p>
+
+        <label id="labelForSurname" for="surname">Surname</label>
+        <input
+          id="surname"
+          type="text"
+          minlength="2"
+          required
+          autocomplete="off"
+          pattern="[A-Za-zА-Яа-яЁё][A-Za-zА-Яа-яЁё\- ]*"
+        />
+        <p id="invalidSurname"></p>
+
+        <label id="labelForPhone" for="phone">Mobile phone number</label>
+        <input
+          id="phone"
+          type="tel"
+          minlength="10"
+          required
+          autocomplete="off"
+          pattern="^\+?[0-10\s-]+$"
+        />
+        <p id="invalidPhone"></p>
+
+        <label id="labelForEmail" for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          required
+          autocomplete="off"
+          pattern="[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,}"
+        />
+        <p id="invalidEmail"></p>
+
+        <label id="labelForPassword" for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          minlength="5"
+          required
+          pattern="^(?=.*[a-zA-Z])(?=.*\d).{5,}$"
+        />
+        <p id="invalidPassword"></p>
+
+        <button id="myBtn">Register</button>
+      </form>
+    </div>
+
+    <script src="./button.js"></script>
+    <!-- <script src="./form.js"></script> -->
+    <script src="https://unpkg.com/i18next@23.8.2/dist/umd/i18next.min.js"></script>
+    <script type="module" src="./language.js"></script>
+  </body>
+</html>
